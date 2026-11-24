@@ -1,0 +1,26 @@
+transaction_id,date,account_id,account_name,vendor,amount,currency,description,approval_status,po_number,authorized_by
+TXN-2026-001,2026-03-02,6010,Facilities & Office,Metropolis Real Estate,25000.0,USD,Monthly HQ Office Lease,APPROVED,PO-2026-011,VP_FINANCE
+TXN-2026-002,2026-03-03,6020,Cloud Infrastructure,Google Cloud EMEA,34120.5,USD,Monthly Compute & BigQuery Usage,APPROVED,PO-2026-014,VP_ENGINEERING
+TXN-2026-003,2026-03-05,6040,Security Software,CyberShield Solutions,14250.0,USD,Annual Endpoint Protection License Inv-90211,APPROVED,PO-2026-022,DIR_INFOSEC
+TXN-2026-004,2026-03-05,6040,Security Software,CyberShield Solutions,14250.0,USD,Annual Endpoint Protection License Inv-90211 (Duplicate),APPROVED,PO-2026-022,DIR_INFOSEC
+TXN-2026-005,2026-03-08,6050,Legal & Regulatory,Sullivan & Sterling LLP,18500.0,USD,Patent Filing and IP Advisory,APPROVED,PO-2026-035,GENERAL_COUNSEL
+TXN-2026-006,2026-03-10,6020,Cloud Infrastructure,Datadog Observability,8400.0,USD,APM and Log Ingestion Subscription,APPROVED,PO-2026-039,DEV_LEAD
+TXN-2026-007,2026-03-12,6030,Consulting & Advisory,Deloitte Advisory,62000.0,USD,Q1 Internal Controls Readiness Review,APPROVED,PO-2026-042,CFO
+TXN-2026-008,2026-03-14,6070,International Logistics,Starlight Offshore Ltd,78500.0,USD,Urgent Expedited Freight Clearance,APPROVED,PO-2026-045,DIR_OPERATIONS
+TXN-2026-009,2026-03-16,6010,Facilities & Office,Global Cleaners Inc,3200.0,USD,Janitorial and Sanitization Services,APPROVED,PO-2026-048,OFFICE_MGR
+TXN-2026-010,2026-03-17,6060,Marketing & PR,Omnicom Media,42000.0,USD,Spring Product Launch Ad Campaign,APPROVED,PO-2026-051,CMO
+TXN-2026-011,2026-03-18,6020,Cloud Infrastructure,Snowflake Inc,16500.0,USD,Data Warehouse Credit Consumption,APPROVED,PO-2026-055,VP_DATA
+TXN-2026-012,2026-03-19,6080,HR & Recruiting,Robert Half Tech,9500.0,USD,Contract Staffing Contingency Fee,APPROVED,PO-2026-058,HR_DIRECTOR
+TXN-2026-013,2026-03-20,6040,Security Software,Okta Identity,11200.0,USD,Workforce Identity MFA Enterprise,APPROVED,PO-2026-061,DIR_INFOSEC
+TXN-2026-014,2026-03-22,6020,Cloud Infrastructure,Apex Cloud Holdings,49950.0,USD,GPU Cluster Reservation Tranche A,APPROVED,PO-2026-065,VP_ENGINEERING
+TXN-2026-015,2026-03-23,6020,Cloud Infrastructure,Apex Cloud Holdings,49990.0,USD,GPU Cluster Reservation Tranche B,APPROVED,PO-2026-066,VP_ENGINEERING
+TXN-2026-016,2026-03-24,6010,Facilities & Office,Cisco Systems,28400.0,USD,Core Switch Network Hardware Upgrade,APPROVED,PO-2026-070,VP_IT
+TXN-2026-017,2026-03-25,6050,Legal & Regulatory,Baker McKenzie,21000.0,USD,International Tax Structuring Advisory,APPROVED,PO-2026-074,GENERAL_COUNSEL
+TXN-2026-018,2026-03-26,6030,Consulting & Advisory,McKinsey & Co,125000.0,USD,Strategic Growth Initiative Phase II,APPROVED,PO-2026-078,CFO
+TXN-2026-019,2026-03-27,6060,Marketing & PR,HubSpot Marketing,7600.0,USD,Enterprise Marketing Hub Seats,APPROVED,PO-2026-081,CMO
+TXN-2026-020,2026-03-28,6080,HR & Recruiting,LinkedIn Enterprise,15400.0,USD,Recruiter Corporate Subscriptions,APPROVED,PO-2026-085,HR_DIRECTOR
+TXN-2026-021,2026-03-29,6030,Consulting & Advisory,Nexus Global Advisory,38000.0,USD,Ad-hoc Offshore Staff Augmentation,AUTO_RELEASED,NONE,UNKNOWN
+TXN-2026-022,2026-03-30,6010,Facilities & Office,Pacific Gas & Electric,4820.0,USD,HQ Utility and Power Grid Services,APPROVED,PO-2026-089,OFFICE_MGR
+TXN-2026-023,2026-03-30,6040,Security Software,CrowdStrike Falcon,27500.0,USD,Threat Hunting & Incident Response Retainer,APPROVED,PO-2026-092,DIR_INFOSEC
+TXN-2026-024,2026-03-31,6020,Cloud Infrastructure,Amazon Web Services,48750.0,USD,"Production S3, RDS, and EKS Cluster Compute",APPROVED,PO-2026-096,VP_ENGINEERING
+TXN-2026-025,2026-03-31,6070,International Logistics,FedEx Corporate Logistics,5400.0,USD,Global Hardware Shipment Dispatch,APPROVED,PO-2026-099,DIR_OPERATIONS

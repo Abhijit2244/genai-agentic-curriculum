@@ -1,0 +1,122 @@
+[
+  {
+    "id": "INV-2026-001",
+    "vendor": "CloudMatrix Systems",
+    "amount": 24500.0,
+    "currency": "USD",
+    "date": "2026-03-01",
+    "po_number": "PO-2026-101",
+    "approval_status": "APPROVED",
+    "authorized_by": "VP_ENGINEERING",
+    "description": "Monthly Kubernetes & Cloud Hosting Infrastructure",
+    "payment_method": "ACH"
+  },
+  {
+    "id": "INV-2026-002",
+    "vendor": "Metropolis Legal LLP",
+    "amount": 18200.0,
+    "currency": "USD",
+    "date": "2026-03-03",
+    "po_number": "PO-2026-105",
+    "approval_status": "APPROVED",
+    "authorized_by": "GENERAL_COUNSEL",
+    "description": "Q1 Regulatory Filings & IP Advisory",
+    "payment_method": "WIRE"
+  },
+  {
+    "id": "INV-2026-003",
+    "vendor": "CyberShield Solutions",
+    "amount": 14250.0,
+    "currency": "USD",
+    "date": "2026-03-05",
+    "po_number": "PO-2026-112",
+    "approval_status": "APPROVED",
+    "authorized_by": "DIR_INFOSEC",
+    "description": "Endpoint Threat Protection License Annual Renewal (Inv-90211)",
+    "payment_method": "ACH"
+  },
+  {
+    "id": "INV-2026-004",
+    "vendor": "CyberShield Solutions",
+    "amount": 14250.0,
+    "currency": "USD",
+    "date": "2026-03-05",
+    "po_number": "PO-2026-112",
+    "approval_status": "APPROVED",
+    "authorized_by": "DIR_INFOSEC",
+    "description": "Endpoint Threat Protection License Annual Renewal (Inv-90211) [Duplicate Submission]",
+    "payment_method": "ACH"
+  },
+  {
+    "id": "INV-2026-005",
+    "vendor": "Starlight Offshore Ltd",
+    "amount": 78500.0,
+    "currency": "USD",
+    "date": "2026-03-14",
+    "po_number": "PO-2026-125",
+    "approval_status": "APPROVED",
+    "authorized_by": "DIR_OPERATIONS",
+    "description": "Urgent Freight Dispatch & Customs Fast-Track",
+    "payment_method": "INTERNATIONAL_WIRE"
+  },
+  {
+    "id": "INV-2026-006",
+    "vendor": "Apex Cloud Holdings",
+    "amount": 49950.0,
+    "currency": "USD",
+    "date": "2026-03-22",
+    "po_number": "PO-2026-130",
+    "approval_status": "APPROVED",
+    "authorized_by": "VP_ENGINEERING",
+    "description": "High-Density GPU Cluster Allocation Phase A",
+    "payment_method": "ACH"
+  },
+  {
+    "id": "INV-2026-007",
+    "vendor": "Apex Cloud Holdings",
+    "amount": 49990.0,
+    "currency": "USD",
+    "date": "2026-03-23",
+    "po_number": "PO-2026-131",
+    "approval_status": "APPROVED",
+    "authorized_by": "VP_ENGINEERING",
+    "description": "High-Density GPU Cluster Allocation Phase B",
+    "payment_method": "ACH"
+  },
+  {
+    "id": "INV-2026-008",
+    "vendor": "Omnicom Media Agency",
+    "amount": 32000.0,
+    "currency": "USD",
+    "date": "2026-03-27",
+    "po_number": "PO-2026-140",
+    "approval_status": "APPROVED",
+    "authorized_by": "CMO",
+    "description": "Spring Enterprise Brand Campaign Media Placement",
+    "payment_method": "WIRE"
+  },
+  {
+    "id": "INV-2026-009",
+    "vendor": "Omnicom Media Agency",
+    "amount": 32000.0,
+    "currency": "USD",
+    "date": "2026-03-28",
+    "po_number": "PO-2026-140",
+    "approval_status": "PENDING",
+    "authorized_by": "CMO",
+    "description": "Spring Enterprise Brand Campaign Media Placement (Re-bill)",
+    "payment_method": "WIRE"
+  },
+  {
+    "id": "INV-2026-010",
+    "vendor": "Nexus Global Advisory",
+    "amount": 38000.0,
+    "currency": "USD",
+    "date": "2026-03-29",
+    "po_number": "NONE",
+    "approval_status": "AUTO_RELEASED",
+    "authorized_by": "SYSTEM_AUTO",
+    "description": "Ad-hoc Offshore Engineering Augmentation",
+    "payment_method": "ACH"
+  }
+]

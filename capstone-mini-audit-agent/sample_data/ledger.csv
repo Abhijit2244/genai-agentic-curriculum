@@ -1,0 +1,7 @@
+transaction_id,invoice_id,date,vendor,amount,po_number,approval_status,authorized_by,description
+TXN-2026-001,INV-2026-001,2026-03-01,CloudMatrix Systems,24500.0,PO-2026-101,APPROVED,VP_ENGINEERING,Monthly Kubernetes & Cloud Hosting
+TXN-2026-002,INV-2026-002,2026-03-03,Metropolis Legal LLP,18200.0,PO-2026-105,APPROVED,GENERAL_COUNSEL,Q1 IP & Regulatory Advisory
+TXN-2026-003,INV-2026-003,2026-03-05,CyberShield Solutions,14250.0,PO-2026-112,APPROVED,DIR_INFOSEC,Endpoint Threat Protection Renewal Inv-90211
+TXN-2026-006,INV-2026-006,2026-03-22,Apex Cloud Holdings,49950.0,PO-2026-130,APPROVED,VP_ENGINEERING,GPU Cluster Allocation Tranche A
+TXN-2026-008,INV-2026-008,2026-03-14,Starlight Offshore Ltd,78500.0,PO-2026-125,APPROVED,DIR_OPERATIONS,Urgent Freight Dispatch & Clearance
+TXN-2026-010,INV-2026-010,2026-03-29,Nexus Global Advisory,38000.0,NONE,AUTO_RELEASED,UNKNOWN,Ad-hoc Offshore Staff Augmentation
