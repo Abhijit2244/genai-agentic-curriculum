@@ -14,7 +14,7 @@ load_dotenv(dotenv_path=env_path)
 API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY or API_KEY == "your_gemini_api_key_here":
     print("ERROR: GEMINI_API_KEY is not set in your .env file!")
-    print("Please set your API key in C:\\Users\\COM\\Desktop\\sample\\block-a-llm-fundamentals\\.env")
+    print("Please set your API key in .env (copy from .env.example)")
     sys.exit(1)
 
 # Default fast & capable model

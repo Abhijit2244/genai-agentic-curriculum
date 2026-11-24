@@ -2,7 +2,7 @@
 
 > **Module**: Block D: Agentic AI (3.5 Hours Intensive)  
 > **Target Audience**: AI Systems Engineers, Forensic Technology Architects, Senior Engineering Candidates  
-> **Directory**: `C:\Users\COM\Desktop\sample\block-d-agentic-ai\`
+> **Directory**: `block-d-agentic-ai/`
 
 ---
 

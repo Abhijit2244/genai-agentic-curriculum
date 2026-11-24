@@ -161,9 +161,9 @@
 
 ### Q2.4: What are "Roots" in MCP, and how do they enforce security boundaries?
 * **Direct Answer:** Roots (`roots/list`) allow the Host to explicitly declare which filesystem directories the MCP server is allowed to access, preventing path traversal attacks.
-* **Underlying Concept:** If an MCP server exposes file reading tools (`read_file`), an adversarial prompt could attempt to read sensitive files: `read_file(path="/etc/shadow")` or `read_file(path="C:\\Windows\\System32\\cmd.exe")`.
+* **Underlying Concept:** If an MCP server exposes file reading tools (`read_file`), an adversarial prompt could attempt to read sensitive files: `read_file(path="/etc/shadow")` or `read_file(path="../../etc/passwd")`.
 * **The Roots Boundary Check:**
-  1. Host sends its allowed project roots: `[{"uri": "file:///C:/Users/COM/Desktop/sample/project"}]`.
+  1. Host sends its allowed project roots: `[{"uri": "file:///workspace/project"}]`.
   2. Server resolves the requested path: `target = Path(path).resolve()`.
   3. Server asserts: `assert target.is_relative_to(root)`.
   4. If outside permitted roots, server immediately rejects the call with an Access Denied error.

@@ -2,7 +2,7 @@
 
 > **Curriculum Module**: Block D: Agentic AI (3.5 Hours Intensive)  
 > **Topic Scope**: Chatbot vs Workflow vs Agent, Autonomy Levels, ReAct Agent Loops, State Management, Human-in-the-Loop (HITL), Guardrails, Agent Frameworks, A2A Protocol, and Audit Governance.  
-> **Directory**: `C:\Users\COM\Desktop\sample\block-d-agentic-ai\`
+> **Directory**: `block-d-agentic-ai/`
 
 ---
 
@@ -21,7 +21,7 @@ This project implements a complete, enterprise-grade **Autonomous Forensic Audit
 ## 2. Project Directory Structure
 
 ```
-C:\Users\COM\Desktop\sample\block-d-agentic-ai\
+block-d-agentic-ai/
 ├── .env                                # Gemini API Keys & Model configuration
 ├── config.py                           # Gemini LLM & Embedding singletons + text extractor
 ├── data/
@@ -50,7 +50,7 @@ C:\Users\COM\Desktop\sample\block-d-agentic-ai\
 
 ### Step 1: Run the Automated Unit Tests
 ```bash
-cd C:\Users\COM\Desktop\sample\block-d-agentic-ai
+cd block-d-agentic-ai
 python test_project.py
 ```
 

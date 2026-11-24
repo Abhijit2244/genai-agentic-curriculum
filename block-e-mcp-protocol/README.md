@@ -2,7 +2,7 @@
 
 > **Curriculum Module**: Block E: MCP — Model Context Protocol (2.0 Hours Intensive)  
 > **Topic Scope**: $M \times N$ Integration Problem, Host-Client-Server Architecture, Tools/Resources/Prompts Primitives, JSON-RPC 2.0 Lifecycle, stdio vs. Streamable HTTP, OAuth 2.1, Security (Tool Poisoning, Confused Deputy), MCP vs. Function Calling vs. REST vs. A2A.  
-> **Directory**: `C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-e-mcp-protocol\`
+> **Directory**: `block-e-mcp-protocol/`
 
 ---
 
@@ -30,7 +30,7 @@ This project implements a complete, production-grade **Model Context Protocol (M
 ## 2. Directory Structure
 
 ```
-C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-e-mcp-protocol\
+block-e-mcp-protocol/
 ├── .env                                # Gemini API key & settings
 ├── config.py                           # Gemini LLM initialization + common utilities
 ├── data/
@@ -52,7 +52,7 @@ C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-e-mcp-protocol\
 
 ### Step 1: Run the Automated Unit Tests
 ```bash
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-e-mcp-protocol
+cd block-e-mcp-protocol
 python -m unittest test_project.py
 ```
 

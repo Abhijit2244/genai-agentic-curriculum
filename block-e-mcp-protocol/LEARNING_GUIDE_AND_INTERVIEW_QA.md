@@ -2,7 +2,7 @@
 
 > **Module**: Block E: MCP — Model Context Protocol (2.0 Hours Intensive)  
 > **Target Audience**: AI Platform Engineers, Enterprise Integration Architects, Staff Engineering Candidates  
-> **Directory**: `C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-e-mcp-protocol\`
+> **Directory**: `block-e-mcp-protocol/`
 
 ---
 
@@ -431,8 +431,8 @@ The MCP session proceeds through four deterministic phases:
 #### Model Answer:
 A **Root** represents an explicit filesystem directory or URI boundary that the client/host has authorized the server to access.
 
-- When a developer opens a project in Cursor or VS Code at `C:\Projects\MyApp`, the MCP host notifies the MCP server via `roots/list`:
-  `roots: [{"uri": "file:///C:/Projects/MyApp", "name": "Workspace Root"}]`
+- When a developer opens a project in Cursor or VS Code at `/workspace/MyApp`, the MCP host notifies the MCP server via `roots/list`:
+  `roots: [{"uri": "file:///workspace/MyApp", "name": "Workspace Root"}]`
 - **Security Enforcement**:
   - An MCP server implementing filesystem tools (e.g., `read_file`, `write_file`) must validate that all incoming file path parameters reside strictly within one of the advertised roots.
   - If an attacker attempts path traversal (`read_file("../../../Windows/System32")`), the server detects that the path resolves outside the permitted roots and rejects the call with an `AccessDenied` error.
@@ -956,7 +956,7 @@ When an MCP server exposes file reading tools (e.g., `read_file`, `search_direct
    ```json
    {
      "roots": [
-       {"uri": "file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum", "name": "Workspace"}
+       {"uri": "file:///workspace/genai-agentic-curriculum", "name": "Workspace"}
      ]
    }
    ```

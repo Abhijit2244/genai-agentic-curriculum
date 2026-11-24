@@ -1,6 +1,6 @@
 # Master GenAI & Agentic AI Curriculum
 
-> **Root Directory**: `C:\Users\COM\Desktop\sample\genai-agentic-curriculum\`  
+> **Repository**: `genai-agentic-curriculum`  
 > **Ecosystem**: Python 3.15, Google Gemini API (`gemini-3.5-flash-lite`, `gemini-embedding-001`), LangChain, LangGraph, Pandas, OpenCV, FastAPI, React 18, Model Context Protocol (FastMCP).
 
 ---
@@ -8,7 +8,7 @@
 ## 1. Directory Structure
 
 ```
-C:\Users\COM\Desktop\sample\genai-agentic-curriculum\
+genai-agentic-curriculum/
 ├── README.md                          # Master curriculum index (this file)
 │
 ├── docs/                              # Dual-Track Agentic AI Learning Roadmaps
@@ -70,12 +70,12 @@ C:\Users\COM\Desktop\sample\genai-agentic-curriculum\
 
 | Module | Core Topics | Key Practice Project | Graded Q&As | Direct Link |
 | :--- | :--- | :--- | :---: | :--- |
-| **Block A: LLM Fundamentals** | Tokens, Context Windows, Softmax Temp, Grammar JSON, Embeddings | API calls, Pydantic schemas, Tool execution | **40 Q&As** | [Block A Guide](file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum/block-a-llm-fundamentals/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
-| **Block B: RAG Mastery** | PDF Parsing, Recursive Chunking, HNSW, MMR, Hybrid Search | RAG over 4-page ISO/SOC-2 PDF with exact citations | **40 Q&As** | [Block B Guide](file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum/block-b-rag-mastery/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
-| **Block C: LangChain & LangGraph** | LCEL, Cyclic Graphs, `MemorySaver`, HITL Breakpoints, Swarms | ReAct state machine, HITL approval, Multi-agent supervisor | **40 Q&As** | [Block C Guide](file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum/block-c-langchain-langgraph/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
-| **Block D: Agentic AI & Audit** | 6 Autonomy Levels, State Checkpoints, Guardrails, A2A Protocol | 3-tool Forensic Audit Agent with pandas & RAG + HITL Sign-off | **40 Q&As** | [Block D Guide](file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum/block-d-agentic-ai/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
-| **Block E: Model Context Protocol** | M x N Problem, Tools/Resources/Prompts, JSON-RPC 2.0, stdio/HTTP | Invoice MCP Server + MCP Client + Autonomous Agent Integration | **40 Q&As** | [Block E Guide](file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum/block-e-mcp-protocol/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
-| **Capstone: Mini Audit Agent** | Full-Stack Forensic Agent: React UI, FastAPI, OpenCV OCR, Pandas, RAG, LangGraph, MCP, SSE, HITL | End-to-end web & CLI audit system with live SSE and HITL approval | **40 Q&As** | [Capstone Guide](file:///C:/Users/COM/Desktop/sample/genai-agentic-curriculum/capstone-mini-audit-agent/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
+| **Block A: LLM Fundamentals** | Tokens, Context Windows, Softmax Temp, Grammar JSON, Embeddings | API calls, Pydantic schemas, Tool execution | **40 Q&As** | [Block A Guide](./block-a-llm-fundamentals/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
+| **Block B: RAG Mastery** | PDF Parsing, Recursive Chunking, HNSW, MMR, Hybrid Search | RAG over 4-page ISO/SOC-2 PDF with exact citations | **40 Q&As** | [Block B Guide](./block-b-rag-mastery/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
+| **Block C: LangChain & LangGraph** | LCEL, Cyclic Graphs, `MemorySaver`, HITL Breakpoints, Swarms | ReAct state machine, HITL approval, Multi-agent supervisor | **40 Q&As** | [Block C Guide](./block-c-langchain-langgraph/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
+| **Block D: Agentic AI & Audit** | 6 Autonomy Levels, State Checkpoints, Guardrails, A2A Protocol | 3-tool Forensic Audit Agent with pandas & RAG + HITL Sign-off | **40 Q&As** | [Block D Guide](./block-d-agentic-ai/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
+| **Block E: Model Context Protocol** | M x N Problem, Tools/Resources/Prompts, JSON-RPC 2.0, stdio/HTTP | Invoice MCP Server + MCP Client + Autonomous Agent Integration | **40 Q&As** | [Block E Guide](./block-e-mcp-protocol/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
+| **Capstone: Mini Audit Agent** | Full-Stack Forensic Agent: React UI, FastAPI, OpenCV OCR, Pandas, RAG, LangGraph, MCP, SSE, HITL | End-to-end web & CLI audit system with live SSE and HITL approval | **40 Q&As** | [Capstone Guide](./capstone-mini-audit-agent/LEARNING_GUIDE_AND_INTERVIEW_QA.md) |
 
 **Total Guide Size**: Over **6,370 lines** of technical guides, system design architectures, and **240 graded interview questions** spanning Junior, Mid-Level, Senior, and Staff/Principal Architect levels.
 
@@ -85,32 +85,32 @@ C:\Users\COM\Desktop\sample\genai-agentic-curriculum\
 
 ```bash
 # Block A: LLM Fundamentals
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-a-llm-fundamentals
+cd block-a-llm-fundamentals
 python main.py
 python test_project.py
 
 # Block B: RAG Mastery
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-b-rag-mastery
+cd block-b-rag-mastery
 python main.py
 python -m unittest test_project.py
 
 # Block C: LangChain & LangGraph
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-c-langchain-langgraph
+cd block-c-langchain-langgraph
 python main.py
 python -m unittest test_project.py
 
 # Block D: Agentic AI & Audit
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-d-agentic-ai
+cd block-d-agentic-ai
 python main.py
 python -m unittest test_project.py
 
 # Block E: Model Context Protocol
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\block-e-mcp-protocol
+cd block-e-mcp-protocol
 python main.py
 python -m unittest test_project.py
 
 # Capstone: Mini Audit Agent
-cd C:\Users\COM\Desktop\sample\genai-agentic-curriculum\capstone-mini-audit-agent
+cd capstone-mini-audit-agent
 python main.py             # Launches Web Application at http://127.0.0.1:8000/
 python main.py --demo      # Runs automated CLI forensic audit demonstration
 python -m unittest test_project.py

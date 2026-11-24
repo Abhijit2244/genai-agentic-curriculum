@@ -3,7 +3,7 @@
 > **Curriculum Module**: LLMs, RAG, Agentic AI, MCP (The Most Important Day)  
 > **Topic**: Block A: LLM Fundamentals (1.5 Hours Intensive)  
 > **SDK**: Modern Google GenAI Python SDK (`google-genai` / Gemini 3.5 Series)  
-> **Location**: `C:\Users\COM\Desktop\sample\block-a-llm-fundamentals`
+> **Location**: `block-a-llm-fundamentals/`
 
 ---
 
@@ -161,7 +161,7 @@ block-a-llm-fundamentals/
 
 1. **Navigate to the project directory**:
    ```powershell
-   cd C:\Users\COM\Desktop\sample\block-a-llm-fundamentals
+   cd block-a-llm-fundamentals
    ```
 
 2. **Run the interactive navigator**:
@@ -184,26 +184,26 @@ block-a-llm-fundamentals/
 ## 3. Practice Walkthrough & Code Examples
 
 ### 3.1 Script 1: Basic API Call with System Instruction & Temperature
-[01_call_llm.py](file:///C:/Users/COM/Desktop/sample/block-a-llm-fundamentals/01_call_llm.py) demonstrates:
+[01_call_llm.py](./01_call_llm.py) demonstrates:
 - Specifying `system_instruction` to constrain tone and format.
 - Configuring `temperature=0.2` and `top_p=0.95`.
 - Reading `usage_metadata` (`prompt_token_count`, `candidates_token_count`, `total_token_count`).
 - Eliciting step-by-step reasoning via **Chain-of-Thought (CoT)**.
 
 ### 3.2 Script 2: Structured JSON Output via Pydantic
-[02_structured_json.py](file:///C:/Users/COM/Desktop/sample/block-a-llm-fundamentals/02_structured_json.py) demonstrates:
+[02_structured_json.py](./02_structured_json.py) demonstrates:
 - Declaring a Pydantic schema `TechConceptAnalysis`.
 - Supplying `response_schema=TechConceptAnalysis` and `response_mime_type="application/json"`.
 - Validating the output using `TechConceptAnalysis.model_validate_json(response.text)`.
 
 ### 3.3 Script 3: Tool / Function Calling (Agent Foundation)
-[03_tool_calling.py](file:///C:/Users/COM/Desktop/sample/block-a-llm-fundamentals/03_tool_calling.py) demonstrates:
+[03_tool_calling.py](./03_tool_calling.py) demonstrates:
 - Defining a Python function `get_service_health(service_name, region)`.
 - Registering the function in `types.GenerateContentConfig(tools=[get_service_health])`.
 - Watching the LLM recognize the missing factual context, invoke the local Python function, and produce a grounded response.
 
 ### 3.4 Script 4: Embeddings & Vector Cosine Similarity
-[04_embeddings_demo.py](file:///C:/Users/COM/Desktop/sample/block-a-llm-fundamentals/04_embeddings_demo.py) demonstrates:
+[04_embeddings_demo.py](./04_embeddings_demo.py) demonstrates:
 - Generating 3072-dimensional dense embeddings with `gemini-embedding-001`.
 - Computing cosine similarity between related vs. unrelated concepts.
 

@@ -2,7 +2,7 @@
 
 > **Module**: Block A: LLM Fundamentals (1.5 Hours Intensive)  
 > **Target Audience**: AI Engineers, LLM System Designers, Senior Engineering Candidates  
-> **Directory**: `C:\Users\COM\Desktop\sample\block-a-llm-fundamentals\`
+> **Directory**: `block-a-llm-fundamentals/`
 
 ---
 

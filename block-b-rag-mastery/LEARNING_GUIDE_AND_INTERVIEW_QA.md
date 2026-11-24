@@ -2,7 +2,7 @@
 
 > **Module**: Block B: Retrieval-Augmented Generation (3 Hours Intensive)  
 > **Target Audience**: AI Engineers, Enterprise Search Architects, Senior Backend Candidates  
-> **Directory**: `C:\Users\COM\Desktop\sample\block-b-rag-mastery\`
+> **Directory**: `block-b-rag-mastery/`
 
 ---
 

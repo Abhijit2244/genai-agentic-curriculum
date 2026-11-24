@@ -3,7 +3,7 @@
 > **Curriculum Module**: LLMs, RAG, Agentic AI, MCP (The Most Important Day)  
 > **Topic**: Block B: RAG Architecture & Implementation (3 Hours Intensive)  
 > **Frameworks**: LangChain, Modern Google GenAI (`gemini-3.5-flash-lite`, `gemini-embedding-001`), Vector Stores  
-> **Location**: `C:\Users\COM\Desktop\sample\block-b-rag-mastery`
+> **Location**: `block-b-rag-mastery/`
 
 ---
 
@@ -222,7 +222,7 @@ block-b-rag-mastery/
 
 1. **Navigate to the project directory**:
    ```powershell
-   cd C:\Users\COM\Desktop\sample\block-b-rag-mastery
+   cd block-b-rag-mastery
    ```
 
 2. **Run the interactive menu**:
@@ -251,26 +251,26 @@ block-b-rag-mastery/
 ## 3. Practice Walkthrough & Code Modules
 
 ### 3.1 Module 1: Document Ingestion & Chunking
-[01_load_and_chunk.py](file:///C:/Users/COM/Desktop/sample/block-b-rag-mastery/01_load_and_chunk.py) demonstrates:
+[01_load_and_chunk.py](./01_load_and_chunk.py) demonstrates:
 - Extracting raw text and metadata across all 4 PDF pages with `PyPDFLoader`.
 - Comparing naive character splitting with `RecursiveCharacterTextSplitter`.
 - Configuring `chunk_size=400` with `chunk_overlap=80` to preserve context across boundaries.
 
 ### 3.2 Module 2: Vector Store Indexing & Similarity Search
-[02_vector_store_indexing.py](file:///C:/Users/COM/Desktop/sample/block-b-rag-mastery/02_vector_store_indexing.py) demonstrates:
+[02_vector_store_indexing.py](./02_vector_store_indexing.py) demonstrates:
 - Generating 3072-dimensional embeddings via `models/gemini-embedding-001`.
 - Performing Top-K similarity search and inspecting cosine relevance scores.
 - Applying metadata filtering to constrain retrieval strictly to specific pages.
 
 ### 3.3 Module 3: End-to-End RAG Pipeline with Citations
-[03_rag_pipeline_with_citations.py](file:///C:/Users/COM/Desktop/sample/block-b-rag-mastery/03_rag_pipeline_with_citations.py) demonstrates:
+[03_rag_pipeline_with_citations.py](./03_rag_pipeline_with_citations.py) demonstrates:
 - Constructing an LCEL (LangChain Expression Language) prompt chain with strict auditor constraints.
 - Producing grounded answers with mandatory inline page citations: `[Page X]`.
 - Enforcing refusal when asked about policies not present in the document.
 - Printing a complete verified source audit trail showing exact chunk excerpts.
 
 ### 3.4 Module 4: Advanced Retrieval Techniques
-[04_advanced_retrieval_techniques.py](file:///C:/Users/COM/Desktop/sample/block-b-rag-mastery/04_advanced_retrieval_techniques.py) demonstrates:
+[04_advanced_retrieval_techniques.py](./04_advanced_retrieval_techniques.py) demonstrates:
 - Maximal Marginal Relevance (MMR) vs. Top-K search.
 - Multi-Query Expansion via LLM query rewriting.
 - Production architectures: Hybrid BM25 search, Cross-Encoder re-ranking, and GraphRAG.

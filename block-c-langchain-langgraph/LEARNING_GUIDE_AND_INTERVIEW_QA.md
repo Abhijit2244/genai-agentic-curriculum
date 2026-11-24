@@ -2,7 +2,7 @@
 
 > **Module**: Block C: LangChain & LangGraph Stateful Agentic AI (State Machines, HITL & Multi-Agent Swarms)  
 > **Target Audience**: AI Engineers, Agentic System Architects, Senior Software Engineers  
-> **Directory**: `C:\Users\COM\Desktop\sample\block-c-langchain-langgraph\`
+> **Directory**: `block-c-langchain-langgraph/`
 
 ---
 

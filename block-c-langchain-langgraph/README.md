@@ -3,7 +3,7 @@
 > **Curriculum Module**: LLMs, RAG, Agentic AI, MCP (The Most Important Day)  
 > **Topic**: Block C: LangChain & LangGraph (Stateful Agentic Loops, HITL & Multi-Agent Swarms)  
 > **Frameworks**: LangChain 1.5, LangGraph 1.2 (`StateGraph`, `MemorySaver`), Google GenAI (`gemini-3.5-flash-lite`)  
-> **Location**: `C:\Users\COM\Desktop\sample\block-c-langchain-langgraph`
+> **Location**: `block-c-langchain-langgraph/`
 
 ---
 
@@ -161,7 +161,7 @@ block-c-langchain-langgraph/
 
 1. **Navigate to the project directory**:
    ```powershell
-   cd C:\Users\COM\Desktop\sample\block-c-langchain-langgraph
+   cd block-c-langchain-langgraph
    ```
 
 2. **Run the interactive menu**:
@@ -190,25 +190,25 @@ block-c-langchain-langgraph/
 ## 3. Practice Walkthrough & Code Modules
 
 ### 3.1 Module 1: LangChain Expression Language (LCEL) & Composability
-[01_langchain_lcel_chains.py](file:///C:/Users/COM/Desktop/sample/block-c-langchain-langgraph/01_langchain_lcel_chains.py) demonstrates:
+[01_langchain_lcel_chains.py](./01_langchain_lcel_chains.py) demonstrates:
 - The Unix-style pipe operator `|` chaining `PromptTemplate | LLM | OutputParser`.
 - Enforcing structured Pydantic models via `.with_structured_output(IncidentAnalysis)`.
 - Simultaneous dual-perspective evaluation with `RunnableParallel`.
 
 ### 3.2 Module 2: Stateful ReAct Agent from Scratch
-[02_langgraph_react_agent.py](file:///C:/Users/COM/Desktop/sample/block-c-langchain-langgraph/02_langgraph_react_agent.py) demonstrates:
+[02_langgraph_react_agent.py](./02_langgraph_react_agent.py) demonstrates:
 - Declaring `AgentState` with the `add_messages` reducer.
 - Defining local tools with `@tool`: `check_sla_credit_policy` and `calculate_downtime_credit`.
 - Assembling `workflow = StateGraph(AgentState)`, adding `agent` and `tools` nodes, and setting the cyclical conditional edge `should_continue`.
 - Streaming step-by-step agent decisions and tool outputs in real time.
 
 ### 3.3 Module 3: Checkpointing Memory & Human-in-the-Loop (HITL)
-[03_memory_and_human_in_the_loop.py](file:///C:/Users/COM/Desktop/sample/block-c-langchain-langgraph/03_memory_and_human_in_the_loop.py) demonstrates:
+[03_memory_and_human_in_the_loop.py](./03_memory_and_human_in_the_loop.py) demonstrates:
 - **Part 1 (Memory)**: Connecting `MemorySaver` checkpointer; proving that user details shared in Turn 1 are remembered in Turn 2 under `thread_id="session_user_99"`.
 - **Part 2 (HITL)**: Setting `interrupt_before=["tools"]` on dangerous action `execute_database_failover`. The agent pauses, displays pending arguments to the human, and resumes only after explicit approval.
 
 ### 3.4 Module 4: Multi-Agent Collaboration & Supervisor Pattern
-[04_multi_agent_supervisor.py](file:///C:/Users/COM/Desktop/sample/block-c-langchain-langgraph/04_multi_agent_supervisor.py) demonstrates:
+[04_multi_agent_supervisor.py](./04_multi_agent_supervisor.py) demonstrates:
 - A supervisor routing node using structured classification to delegate between `SecurityAuditor` and `DevOpsEngineer`.
 - Specialized worker nodes executing isolated tools (`scan_cve_vulnerabilities`, `inspect_kubernetes_pods`).
 - An executive synthesizer node producing a unified incident briefing.
