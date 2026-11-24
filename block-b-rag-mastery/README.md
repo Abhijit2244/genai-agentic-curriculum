@@ -124,7 +124,7 @@ Retrieves the $k$ chunks with highest cosine similarity to the query vector.
 #### 2. Maximal Marginal Relevance (MMR)
 Balances **Relevance** to the query with **Diversity** among already chosen chunks:
 
-$$\text{MMR} = \operatorname{argmax}_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}(d_i, q) - (1 - \lambda) \max_{d_j \in S} \text{Sim}(d_i, d_j) \right]$$
+$$\text{MMR} = \arg\max_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}(d_i, q) - (1 - \lambda) \max_{d_j \in S} \text{Sim}(d_i, d_j) \right]$$
 
 - $\lambda = 1.0$: Pure Top-K relevance (high redundancy).
 - $\lambda = 0.5$: Balanced relevance and topic diversity.

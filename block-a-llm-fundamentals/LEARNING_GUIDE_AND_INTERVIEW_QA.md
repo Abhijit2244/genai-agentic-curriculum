@@ -81,7 +81,7 @@ Low Temperature (T = 0.2):        High Temperature (T = 1.2):
 
 | Hyperparameter | Behavior & Math | Production Recommendation |
 | :--- | :--- | :--- |
-| **$T = 0.0$ (Greedy)** | Deterministic argmax: selects $\operatorname{argmax}_i(z_i)$. | **Code, Structured JSON, Tool Calling, SQL extraction.** |
+| **$T = 0.0$ (Greedy)** | Deterministic argmax: selects $\arg\max_i(z_i)$. | **Code, Structured JSON, Tool Calling, SQL extraction.** |
 | **$T = 0.2 - 0.4$** | Sharp distribution; high factual grounding, low randomness. | Technical documentation, customer support Q&A. |
 | **$T = 0.7 - 1.0$** | Flatter distribution; higher vocabulary diversity. | Creative brainstorming, conversational chat. |
 | **Top-p (Nucleus)** | Samples from smallest set $V^{(p)}$ where $\sum_{i \in V^{(p)}} P(w_i) \ge p$. Discards low-probability tail. | Set to `0.9` or `0.95`. Combined with moderate temperature. |
@@ -421,7 +421,7 @@ def call_llm_with_resilience(payload, max_retries=5, base_delay=1.0, max_delay=3
 #### Model Answer:
 | Decoding Strategy | Algorithmic Mechanics | Latency & Memory | Output Diversity | Best Production Use Case |
 | :--- | :--- | :--- | :--- | :--- |
-| **Greedy Search** | Picks $w_t = \operatorname{argmax}_i(z_i)$ at every step. Path length = 1. | **Lowest latency**, $\mathcal{O}(1)$ memory footprint. | Zero diversity. Can get trapped in repetitive loops. | Code synthesis, JSON extraction, SQL queries. |
+| **Greedy Search** | Picks $w_t = \arg\max_i(z_i)$ at every step. Path length = 1. | **Lowest latency**, $\mathcal{O}(1)$ memory footprint. | Zero diversity. Can get trapped in repetitive loops. | Code synthesis, JSON extraction, SQL queries. |
 | **Beam Search** | Maintains top-$B$ hypotheses at each step by exploring $B \times |V|$ paths and pruning to $B$ highest cumulative probabilities. | **High latency and VRAM** ($\mathcal{O}(B)$ KV cache copies). Slow. | Low diversity. Seeks the single most probable overall sequence. | Machine Translation, Speech-to-Text (Whisper), Summarization. |
 | **Nucleus Sampling (Top-p)** | Samples randomly from the minimal set of tokens whose cumulative probability $\ge p$. | Low latency, single forward pass per token. | **High diversity**, avoids degenerate tail tokens. | Conversational chatbots, creative storytelling, customer engagement. |
 
@@ -543,18 +543,18 @@ $$\text{Attention}(Q, K, V) = \text{Softmax}\left(\frac{Q K^T}{\sqrt{d_k}}\right
 
 #### Mathematical Proof:
 Assume the components of query $q$ and key $k$ are independent random variables with mean $0$ and variance $1$:
-$$\mathbb{E}[q_i] = 0, \quad \operatorname{Var}(q_i) = 1, \quad \mathbb{E}[k_i] = 0, \quad \operatorname{Var}(k_i) = 1$$
+$$\mathbb{E}[q_i] = 0, \quad \mathrm{Var}(q_i) = 1, \quad \mathbb{E}[k_i] = 0, \quad \mathrm{Var}(k_i) = 1$$
 The dot product is the sum of $d_k$ independent terms:
 $$S = q \cdot k = \sum_{i=1}^{d_k} q_i k_i$$
 - $\mathbb{E}[S] = 0$
 - Since terms are independent:
-  $$\operatorname{Var}(S) = \sum_{i=1}^{d_k} \operatorname{Var}(q_i k_i) = \sum_{i=1}^{d_k} \operatorname{Var}(q_i)\operatorname{Var}(k_i) = d_k \times (1 \times 1) = d_k$$
+  $$\mathrm{Var}(S) = \sum_{i=1}^{d_k} \mathrm{Var}(q_i k_i) = \sum_{i=1}^{d_k} \mathrm{Var}(q_i)\mathrm{Var}(k_i) = d_k \times (1 \times 1) = d_k$$
   The standard deviation of the dot product is $\sqrt{d_k}$.
 
 #### What Happens Without the Scaling Factor:
 For large head dimensions (e.g., $d_k = 128$), the dot products grow very large in magnitude ($|S| \gg 1$).
 When large inputs enter the Softmax function:
-$$\operatorname{Softmax}(z)_i = \frac{\exp(z_i)}{\sum_j \exp(z_j)}$$
+$$\mathrm{Softmax}(z)_i = \frac{\exp(z_i)}{\sum_j \exp(z_j)}$$
 The Softmax function saturates, pushing probabilities close to 1 for the maximum logit and near 0 for all others. The derivative of Softmax in saturated regions approaches **zero**, causing severe **vanishing gradients** during backpropagation that prevent early Transformer training from converging. Dividing by $\sqrt{d_k}$ normalizes the variance back to $1$.
 
 ---
@@ -564,7 +564,7 @@ The Softmax function saturates, pushing probabilities close to 1 for the maximum
 **Topic**: Hardware-Aware Deep Learning
 
 #### Model Answer:
-Standard attention computes and stores the full $N \times N$ attention matrix $S = Q K^T$ and $P = \operatorname{Softmax}(S)$ in High Bandwidth Memory (HBM).
+Standard attention computes and stores the full $N \times N$ attention matrix $S = Q K^T$ and $P = \mathrm{Softmax}(S)$ in High Bandwidth Memory (HBM).
 - HBM bandwidth is slow ($\approx 1.5 - 2.0 \text{ TB/s}$ on A100) compared to on-chip SRAM ($\approx 19 \text{ TB/s}$).
 - For long contexts, materializing the intermediate $N \times N$ matrix requires $\mathcal{O}(N^2)$ memory reads and writes, making standard attention **memory-bound**.
 
@@ -760,7 +760,7 @@ In a **Dense Model** (e.g., LLaMA-3-70B), every single parameter is active for e
 
 #### Top-$k$ Routing Mechanics:
 Given token representation $x$:
-$$H(x) = \operatorname{Softmax}(\operatorname{KeepTopK}(W_g x, k))$$
+$$H(x) = \mathrm{Softmax}(\mathrm{KeepTopK}(W_g x, k))$$
 $$y = \sum_{i \in \text{TopK}} H(x)_i \cdot \text{Expert}_i(x)$$
 - For Mixtral $8 \times 7\text{B}$, $E=8$ and $k=2$. For every token, only 2 out of 8 experts are evaluated. While the model has 47B total parameters, only **13B parameters are active** per token forward pass.
 

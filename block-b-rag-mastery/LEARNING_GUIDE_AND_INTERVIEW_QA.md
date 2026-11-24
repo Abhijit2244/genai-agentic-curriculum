@@ -90,7 +90,7 @@ Selects the $k$ chunks with highest cosine similarity. Fast, but frequently retr
 ### 6.2 Maximal Marginal Relevance (MMR)
 Balances **Relevance** to query $q$ with **Diversity** among already-selected chunks $S$:
 
-$$\text{MMR} = \operatorname{argmax}_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}(d_i, q) - (1 - \lambda) \max_{d_j \in S} \text{Sim}(d_i, d_j) \right]$$
+$$\text{MMR} = \arg\max_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}(d_i, q) - (1 - \lambda) \max_{d_j \in S} \text{Sim}(d_i, d_j) \right]$$
 - $\lambda = 1.0$: Pure Top-K relevance (high redundancy).
 - $\lambda = 0.5$: Optimal balance of relevance and cross-topic diversity.
 
@@ -525,7 +525,7 @@ $$\text{RRF\_Score}(d \in D) = \sum_{m \in M} \frac{1}{k + r_m(d)}$$
 
 **Maximal Marginal Relevance (MMR - Carbonell & Goldstein)** balances **query relevance** with **diversity across already selected chunks**:
 
-$$\text{MMR} = \operatorname{argmax}_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}_1(d_i, q) - (1 - \lambda) \cdot \max_{d_j \in S} \text{Sim}_2(d_i, d_j) \right]$$
+$$\text{MMR} = \arg\max_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}_1(d_i, q) - (1 - \lambda) \cdot \max_{d_j \in S} \text{Sim}_2(d_i, d_j) \right]$$
 
 - $q$: User query vector.
 - $R$: Set of candidate retrieved documents.
