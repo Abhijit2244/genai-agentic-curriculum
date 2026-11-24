@@ -37,7 +37,7 @@ flowchart TD
 
     subgraph Backend ["Server & Orchestration Layer (FastAPI + LangGraph)"]
         B --> C[LangGraph StateGraph Orchestrator]
-        C -->|Thread Checkpoint Persistence| CP[(MemorySaver Checkpointer)]
+        C -->|Thread Checkpoint Persistence| CP[("MemorySaver Checkpointer")]
         C -->|Halts at Breakpoint| PA[Pending Human Approval]
         PA -.->|Resume with Human Notes| C
     end
@@ -47,7 +47,7 @@ flowchart TD
         C -->|MCP Tool Call| M2[check_ledger_anomalies]
         C -->|MCP Tool Call| M3[search_compliance_policy]
         C -->|MCP Tool Call| M4[submit_audit_findings]
-        C -->|MCP Resource Read| MR[audit://policies/sox404]
+        C -->|MCP Resource Read| MR["audit://policies/sox404"]
     end
 
     subgraph Engines ["Core Execution Engines"]

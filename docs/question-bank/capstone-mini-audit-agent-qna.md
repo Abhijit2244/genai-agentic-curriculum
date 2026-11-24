@@ -398,13 +398,13 @@ print("Final Step:", final_snapshot.values.get("progress_step"))
 * **Architecture Diagram:**
   ```mermaid
   flowchart TD
-      Ingress[1,000,000 Invoices/Day: S3 / ERP Webhooks] --> Kafka[Apache Kafka Transaction Ingress Topic]
+      Ingress["1,000,000 Invoices/Day: S3 / ERP Webhooks"] --> Kafka[Apache Kafka Transaction Ingress Topic]
       Kafka --> WorkerPool[KEDA Autoscaled LangGraph Worker Pods]
       
       subgraph ExecutionPod ["Worker Execution Pod"]
           WorkerPod --> VisionOCR[OpenCV + TensorRT Multimodal OCR]
-          VisionOCR --> ClickHouse[(ClickHouse Columnar Ledger DB)]
-          ClickHouse --> PolicyRAG[(Milvus Vector Policy Store)]
+          VisionOCR --> ClickHouse[("ClickHouse Columnar Ledger DB")]
+          ClickHouse --> PolicyRAG[("Milvus Vector Policy Store")]
           PolicyRAG --> LangGraphEngine[LangGraph StateGraph Engine]
       end
       
@@ -413,7 +413,7 @@ print("Final Step:", final_snapshot.values.get("progress_step"))
       FastFilter -->|Yes: 8% Flagged| HITLQueue[Priority HITL Auditor Task Queue]
       
       HITLQueue --> AuditorUI[React 18 / Angular Auditor Workspace]
-      AuditorUI -->|CPA Review & Digital Signature| FinalMemos[(WORM S3 Compliance Vault)]
+      AuditorUI -->|CPA Review & Digital Signature| FinalMemos[("WORM S3 Compliance Vault")]
       
       ExecutionPod -.-> OpenTelemetry[OpenTelemetry Collector]
       OpenTelemetry --> Datadog[Datadog / Splunk Trace Analytics]

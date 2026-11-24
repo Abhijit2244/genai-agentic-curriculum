@@ -1204,9 +1204,9 @@ In a high-scale enterprise deployment, running separate tool servers inside ever
 ```mermaid
 flowchart TD
     subgraph Agents ["Distributed LangGraph Agent Cluster"]
-        A1[Agent: Accounts Payable Auditor]
-        A2[Agent: Fraud Investigator]
-        A3[Agent: Tax Compliance Specialist]
+        A1["Agent: Accounts Payable Auditor"]
+        A2["Agent: Fraud Investigator"]
+        A3["Agent: Tax Compliance Specialist"]
     end
 
     subgraph Gateway ["Enterprise MCP Service Mesh (Envoy Gateway)"]

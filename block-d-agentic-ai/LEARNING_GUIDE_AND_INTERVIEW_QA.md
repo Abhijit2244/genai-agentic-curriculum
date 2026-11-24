@@ -1090,7 +1090,7 @@ Agents should not rely solely on LLM semantic pattern matching; they must invoke
      $$P(d) = \log_{10}\left(1 + \frac{1}{d}\right)$$
    - Fabricated numbers cluster unnaturally around mid-range numbers. An agent invokes a `test_benfords_law(vendor_id)` tool, which runs a Chi-Square goodness-of-fit test:
      $$\chi^2 = \sum_{d=1}^9 \frac{(O_d - E_d)^2}{E_d}$$
-   - If $p < 0.01$, the agent flags the vendor for anomalous human manipulation.
+   - If `$p < 0.01$`, the agent flags the vendor for anomalous human manipulation.
 2. **Z-Score Spend Outlier Detection**:
    - For recurring vendor disbursements, compute historical mean $\mu$ and standard deviation $\sigma$:
      $$Z = \frac{X - \mu}{\sigma}$$
@@ -1107,11 +1107,11 @@ In high-stakes fraud detection, false positives cause massive operational fricti
 
 ```mermaid
 flowchart TD
-    Evidence[Case Evidence & Ledger Data] --> Inv[Agent: Forensic Investigator]
-    Evidence --> Def[Agent: Vendor Defense Skeptic]
+    Evidence[Case Evidence & Ledger Data] --> Inv["Agent: Forensic Investigator"]
+    Evidence --> Def["Agent: Vendor Defense Skeptic"]
     Inv -->|Argues Fraud: AP-DUP-03| Debate{Debate & Cross-Examination}
     Def -->|Argues Legitimate: Separate Orders| Debate
-    Debate --> Judge[Agent: Lead Audit Partner]
+    Debate --> Judge["Agent: Lead Audit Partner"]
     Judge -->|Issues Ruling| Ruling[Final Audit Opinion]
 ```
 

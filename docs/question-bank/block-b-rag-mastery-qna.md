@@ -389,12 +389,12 @@ response = llm.generate(prompt)
   ```mermaid
   flowchart TD
       subgraph IngestionCDC ["Real-Time CDC Ingestion Pipeline"]
-          DB[(Enterprise DB / S3 / Confluence)] -->|Debezium CDC| Kafka[Apache Kafka Document Topic]
+          DB[("Enterprise DB / S3 / Confluence")] -->|Debezium CDC| Kafka[Apache Kafka Document Topic]
           Kafka --> WorkerCluster[Ingestion Workers / Ray]
           WorkerCluster --> Tika[Layout Parser & Table Extractor]
           Tika --> Chunker[Recursive Chunking + Overlap]
-          Chunker --> EmbedPool[GPU Embedding Pool: Triton / TEI]
-          EmbedPool --> Qdrant[(Distributed Vector DB: Qdrant / Milvus)]
+          Chunker --> EmbedPool["GPU Embedding Pool: Triton / TEI"]
+          EmbedPool --> Qdrant[("Distributed Vector DB: Qdrant / Milvus")]
       end
 
       subgraph OnlineQuery ["Online Query Pipeline (<500ms P99)"]
@@ -406,7 +406,7 @@ response = llm.generate(prompt)
           SearchEngine --> OpenSearch[BM25 OpenSearch Cluster]
           Qdrant & OpenSearch --> RRF[Reciprocal Rank Fusion]
           RRF --> Reranker[BGE Cross-Encoder Re-ranker Top 3]
-          Reranker --> LLMInference[LLM: Gemini / vLLM Cluster]
+          Reranker --> LLMInference["LLM: Gemini / vLLM Cluster"]
           LLMInference --> Client
       end
   ```

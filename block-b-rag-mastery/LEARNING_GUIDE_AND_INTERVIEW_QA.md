@@ -860,7 +860,7 @@ Retrieved chunks often contain only $20\%$ relevant information, while the remai
 1. **IVFFlat in pgvector**:
    - Builds inverted lists using k-means.
    - *Critical Constraint*: Must be built **after** data is loaded. If built on an empty table, all future vectors land in suboptimal centroids, destroying recall.
-   - Parameter `lists` should be set to $\approx \sqrt{\text{rows}}$ for $<1\text{M}$ rows, or $\frac{\text{rows}}{1000}$ for $>1\text{M}$ rows.
+   - Parameter `lists` should be set to $\approx \sqrt{\text{rows}}$ for `< 1M` rows, or $\frac{\text{rows}}{1000}$ for $>1\text{M}$ rows.
 
 2. **HNSW in pgvector (Recommended)**:
    - Incremental graph construction; can be created on an empty table and continuously updated.
@@ -1032,9 +1032,9 @@ In enterprise systems, documents, accounting policies, and customer records are 
 
 ```mermaid
 flowchart LR
-    DB[(Operational PostgreSQL)] -->|WAL / Debezium| Kafka[Apache Kafka Topic]
+    DB[("Operational PostgreSQL")] -->|WAL / Debezium| Kafka[Apache Kafka Topic]
     Kafka --> IngestionWorker[Vector Sync Worker]
-    IngestionWorker -->|Delete Old Embeddings| VDB[(Vector Database)]
+    IngestionWorker -->|Delete Old Embeddings| VDB[("Vector Database")]
     IngestionWorker -->|Embed New Chunks| VDB
 ```
 

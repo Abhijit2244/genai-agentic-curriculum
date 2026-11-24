@@ -23,9 +23,9 @@ An international financial institution processes **1,000,000 vendor invoices and
 
 #### Quantitative Non-Functional Requirements (NFRs):
 - **Throughput**: 1,000,000 invoices/day (~12 invoices/second steady state, peak 60 invoices/second).
-- **End-to-End Latency**: Batch processing < 15 minutes per batch; on-demand urgent audit < 10 seconds.
-- **Accuracy Target**: >99.5% invoice data extraction accuracy; <2% false positive rate on fraud flags.
-- **Cost Target**: < $0.03 average inference and compute cost per processed invoice.
+- **End-to-End Latency**: Batch processing `< 15 minutes` per batch; on-demand urgent audit `< 10 seconds`.
+- **Accuracy Target**: `> 99.5%` invoice data extraction accuracy; `< 2%` false positive rate on fraud flags.
+- **Cost Target**: `< \$0.03` average inference and compute cost per processed invoice.
 - **Auditability**: 100% deterministic decision lineage; WORM (Write Once, Read Many) storage for 7-year statutory retention.
 
 ---
@@ -128,9 +128,9 @@ A SaaS legal tech enterprise serves **500 enterprise customers**, managing **10,
 
 #### Quantitative Non-Functional Requirements:
 - **Corpus**: 10,000,000 documents (~50,000,000 chunked passages).
-- **Latency**: P95 query response time < 800ms (retrieval + re-ranking); end-to-end streaming answer < 2.5s.
+- **Latency**: P95 query response time `< 800ms` (retrieval + re-ranking); end-to-end streaming answer `< 2.5s`.
 - **Multi-Tenancy**: Zero cross-tenant data contamination; tenant deletion must physically purge records within 24 hours.
-- **Search Quality**: Mean Reciprocal Rank (MRR@10) > 0.85; Recall@10 > 0.92.
+- **Search Quality**: Mean Reciprocal Rank (MRR@10) `> 0.85`; Recall@10 `> 0.92`.
 
 ---
 
@@ -205,7 +205,7 @@ An enterprise with **50,000 developers and AI agents** requires access to intern
 #### Quantitative Requirements:
 - **Scale**: 50,000 active clients (IDE plugins, autonomous background bots, customer agents).
 - **Tool Catalog**: 200+ managed enterprise MCP servers (tools, resources, prompts).
-- **Latency Overhead**: Gateway routing and policy evaluation must add < 15ms overhead per tool call.
+- **Latency Overhead**: Gateway routing and policy evaluation must add `< 15ms` overhead per tool call.
 - **Security**: OAuth 2.1 Mutual TLS, Open Policy Agent (OPA) fine-grained authorization, automatic secret masking.
 
 ---
@@ -332,8 +332,8 @@ flowchart TD
 A global airline handles **100,000 concurrent travelers** during flight disruption events. The platform provides real-time voice and text customer support across web, iOS, and telephone (SIP/WebRTC). It must answer flight queries, rebook cancellations, issue meal vouchers, and hand off to human agents when sentiment turns toxic.
 
 #### Strict Latency SLA for Voice:
-- **Spoken Voice-to-Ear Latency**: < **600ms total round-trip time**.
-  - Any latency > 1,000ms causes unnatural conversational pauses and user frustration.
+- **Spoken Voice-to-Ear Latency**: `< 600ms` total round-trip time.
+  - Any latency `> 1,000ms` causes unnatural conversational pauses and user frustration.
 
 ---
 

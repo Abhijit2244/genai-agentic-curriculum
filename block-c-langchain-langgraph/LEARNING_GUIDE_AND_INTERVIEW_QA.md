@@ -1018,10 +1018,10 @@ LangGraph supports **State Fan-Out** (running multiple independent nodes simulta
 
 ```mermaid
 flowchart LR
-    StartNode[Node: Ingest Invoice] --> OCR[Node: OCR Extraction]
-    StartNode --> Ledger[Node: Ledger History Scan]
-    StartNode --> Policy[Node: Policy RAG Retrieval]
-    OCR --> Synthesis[Node: Evidence Synthesis]
+    StartNode["Node: Ingest Invoice"] --> OCR["Node: OCR Extraction"]
+    StartNode --> Ledger["Node: Ledger History Scan"]
+    StartNode --> Policy["Node: Policy RAG Retrieval"]
+    OCR --> Synthesis["Node: Evidence Synthesis"]
     Ledger --> Synthesis
     Policy --> Synthesis
 ```

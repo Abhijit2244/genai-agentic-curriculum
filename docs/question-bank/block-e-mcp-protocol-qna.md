@@ -41,9 +41,9 @@
   ```mermaid
   flowchart LR
       subgraph WithoutMCP ["Without MCP: M x N Chaos (3 x 3 = 9 Custom Adapters)"]
-          A1[Claude] & A2[Cursor] & A3[Custom Agent] --- B1[(Postgres)]
-          A1 & A2 & A3 --- B2[(GitHub)]
-          A1 & A2 & A3 --- B3[(Slack)]
+          A1[Claude] & A2[Cursor] & A3[Custom Agent] --- B1[("Postgres")]
+          A1 & A2 & A3 --- B2[("GitHub")]
+          A1 & A2 & A3 --- B3[("Slack")]
       end
 
       subgraph WithMCP ["With MCP: M + N Simplicity (3 + 3 = 6 Standard Endpoints)"]
@@ -455,14 +455,14 @@ server.run(transport="stdio")
           Auth[OAuth 2.1 / OIDC Token Validator]
           OPA[Open Policy Agent - OPA Fine-Grained RBAC]
           Limiter[Token Bucket Rate Limiter & FinOps]
-          AuditLogger[WORM Audit Trail Logger: Kafka / Splunk]
+          AuditLogger["WORM Audit Trail Logger: Kafka / Splunk"]
       end
 
       subgraph Fleet ["Stateless Remote MCP Server Pods (Kubernetes)"]
           S_DB[PostgreSQL Ledger MCP Service]
           S_SAP[SAP ERP MCP Service]
           S_OCR[Computer Vision OCR MCP Service]
-          S_Code[Micro-Sandboxed Code Runner: Firecracker]
+          S_Code["Micro-Sandboxed Code Runner: Firecracker"]
       end
 
       Clients -->|Streamable HTTP / TLS 1.3| Auth

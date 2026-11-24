@@ -1044,7 +1044,7 @@ def extract_with_self_healing(prompt: str, schema_cls: Type[BaseModel], max_retr
    - In workflows with large static contexts (e.g., 50-page legal policies, system prompts, code repositories), the first $N$ tokens of the prompt are identical across thousands of queries.
    - Rather than re-running the compute-heavy prefill phase on these $N$ tokens every time, the inference engine computes the Key-Value vectors once and stores them in a fast memory cache indexed by the SHA-256 hash of the token prefix.
 2. **Economic & Latency Impact**:
-   - **Latency (TTFT)**: Drops from $2,500\text{ms}$ down to $<150\text{ms}$ because prefill is bypassed.
+   - **Latency (TTFT)**: Drops from $2,500\text{ms}$ down to `< 150ms` because prefill is bypassed.
    - **Cost**: Cloud providers (Google Gemini Context Caching, OpenAI Prompt Caching, Anthropic Prompt Caching) discount cached prompt tokens by **$50\%$ to $90\%$** compared to standard input token pricing.
 3. **Eviction Policy**:
    - Managed via LRU (Least Recently Used) with a minimum token threshold (typically requires at least 1,024 cached tokens to qualify).

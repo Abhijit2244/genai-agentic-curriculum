@@ -160,11 +160,11 @@
   ```mermaid
   flowchart TD
       subgraph EnterpriseA ["Company A (Auditing Corp)"]
-          AgentA[Auditor Agent] -->|MCP Protocol: Vertical| ToolA[(Local Postgres DB)]
+          AgentA[Auditor Agent] -->|MCP Protocol: Vertical| ToolA[("Local Postgres DB")]
       end
 
       subgraph EnterpriseB ["Company B (Vendor Corp)"]
-          AgentB[Vendor Billing Agent] -->|MCP Protocol: Vertical| ToolB[(Local SAP ERP)]
+          AgentB[Vendor Billing Agent] -->|MCP Protocol: Vertical| ToolB[("Local SAP ERP")]
       end
 
       AgentA <===>|A2A Protocol: Horizontal (mTLS + DIDs)| AgentB
@@ -280,7 +280,7 @@ def process_customer_ticket(ticket_body: str):
 * **Architecture Diagram:**
   ```mermaid
   flowchart LR
-      User[User Request] --> Actor[Actor Agent: Draft Audit Memo]
+      User[User Request] --> Actor["Actor Agent: Draft Audit Memo"]
       Actor --> Critic{Critic Agent: Inspect Rules & Citations}
       Critic -->|Critique & Missing Facts| Actor
       Critic -->|Score >= 95%: Approved| Final[Final Certified Report]
@@ -375,13 +375,13 @@ def process_customer_ticket(ticket_body: str):
 * **Architecture Diagram:**
   ```mermaid
   flowchart TD
-      Ingress[100,000 Invoices/Day: S3 / ERP Webhooks] --> Kafka[Apache Kafka Transaction Ingress Topic]
+      Ingress["100,000 Invoices/Day: S3 / ERP Webhooks"] --> Kafka[Apache Kafka Transaction Ingress Topic]
       Kafka --> WorkerPool[KEDA Autoscaled LangGraph Worker Pods]
       
       subgraph ExecutionPod ["Worker Execution Pod"]
           WorkerPod --> VisionOCR[OpenCV + TensorRT Multimodal OCR]
-          VisionOCR --> ClickHouse[(ClickHouse Columnar Ledger DB)]
-          ClickHouse --> PolicyRAG[(Milvus Vector Policy Store)]
+          VisionOCR --> ClickHouse[("ClickHouse Columnar Ledger DB")]
+          ClickHouse --> PolicyRAG[("Milvus Vector Policy Store")]
           PolicyRAG --> LangGraphEngine[LangGraph StateGraph Engine]
       end
       
@@ -390,7 +390,7 @@ def process_customer_ticket(ticket_body: str):
       FastFilter -->|Yes: 8% Flagged| HITLQueue[Priority HITL Auditor Task Queue]
       
       HITLQueue --> AuditorUI[React 18 / Angular Auditor Workspace]
-      AuditorUI -->|CPA Review & Digital Signature| FinalMemos[(WORM S3 Compliance Vault)]
+      AuditorUI -->|CPA Review & Digital Signature| FinalMemos[("WORM S3 Compliance Vault")]
       
       ExecutionPod -.-> OpenTelemetry[OpenTelemetry Collector]
       OpenTelemetry --> Datadog[Datadog / Splunk Trace Analytics]
