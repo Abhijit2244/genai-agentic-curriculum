@@ -93,7 +93,7 @@ flowchart TD
 - **Why Deterministic?** LLMs should never calculate mathematical financial sums or perform exact ledger lookups due to risk of arithmetic hallucination and non-determinism.
 - **Forensic Detection Algorithms:**
   - **Duplicate Billing (`AP-DUP-03`):** Scans historical ledger for identical vendor and dollar amount within the rolling 72-hour duplicate quarantine window.
-  - **Smurfing / Structuring (`AP-STRUCT-02`):** Detects consecutive disbursements positioned just below executive approval thresholds (e.g., \$48,000–\$49,999 to circumvent \$50,000 dual-CFO sign-off).
+  - **Smurfing / Structuring (`AP-STRUCT-02`):** Detects consecutive disbursements positioned just below executive approval thresholds (e.g., `$48,000`–`$49,999` to circumvent `$50,000` dual-CFO sign-off).
   - **PO Three-Way Matching (`AP-PO-04`):** Flags invoices over \$10,000 missing valid purchase order authorizations.
 
 ### Pillar 5: Compliance Policy RAG Engine (`core/policy_rag.py`)
@@ -338,7 +338,7 @@ Pure dense vector embeddings excel at semantic paraphrasing but can miss exact a
 1. **Sparse Retrieval (BM25):** Computes exact keyword frequency/inverse document frequency scores over policy articles.
 2. **Dense Retrieval:** Computes cosine similarity of dense embeddings.
 3. **Reciprocal Rank Fusion (RRF):** Merges both ranked lists without requiring score normalization:
-   $$RRF\_Score(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{k + \text{rank}_m(d)}$$
+   $$\mathrm{RRF}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{k + \text{rank}_m(d)}$$
    (where $k \approx 60$).
 4. **Cross-Encoder Re-ranker:** Passes the top 10 fused candidates through a cross-encoder model to yield the final top 3 citations with maximum precision.
 

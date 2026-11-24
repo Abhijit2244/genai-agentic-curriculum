@@ -71,7 +71,7 @@
 * **Direct Answer:** Pandas uses deterministic, exact mathematical code that scans 50,000 rows in milliseconds with 100% precision. LLMs are probabilistic language predictors that cannot reliably perform exact float equality searches and can hallucinate arithmetic sums.
 * **Underlying Concept:** 
   $$\text{LLM} = \text{Creative Linguistic Reasoning Engine}$$
-  $$\text{Pandas} = \text{Exact Deterministic Math & Search Engine}$$
+  $$\text{Pandas} = \text{Exact Deterministic Math and Search Engine}$$
   By assigning math and database queries to Pandas and evidence synthesis to the LLM, the system eliminates financial hallucinations.
 * **Follow-up Interview Question:** What Pandas method performs vectorized string matching ignoring uppercase/lowercase differences? *(Answer: `df['vendor'].str.lower().str.contains(...)`).*
 

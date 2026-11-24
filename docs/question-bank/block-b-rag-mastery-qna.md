@@ -183,7 +183,7 @@
 ### Q3.1: How does Reciprocal Rank Fusion (RRF) combine BM25 and Dense Vector search results?
 * **Direct Answer:** RRF is an algorithmic rank-merging technique that scores and blends items from multiple disparate ranking systems (e.g., BM25 keyword search and dense embedding search) using only their ordinal rank positions, avoiding the need to normalize incompatible raw scores.
 * **Mathematical Formula:**
-  $$\text{RRF\_Score}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{k + \text{rank}_m(d)}$$
+  $$\mathrm{RRF}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{k + \text{rank}_m(d)}$$
   where $\text{rank}_m(d)$ is the 1-based rank of document $d$ in system $m$, and $k$ is a smoothing constant (typically $k=60$).
 * **Code Example (Python):**
   ```python
@@ -313,9 +313,9 @@ response = llm.generate(prompt)
   - **Upper Layers (Expressway):** Contain sparse nodes with long-range edges for rapid coarse routing across vector space.
   - **Bottom Layer (Local Roads):** Contains all vectors with dense local connections for fine-grained nearest neighbor discovery.
 * **HNSW Tuning Parameters:**
-  1. **$M$ (Max Connections per Node, typically 16–64):** Number of bidirectional edges per vector. Higher $M$ improves recall and search speed on high-dimensional vectors, but increases index memory consumption.
-  2. **$efConstruction$ (Exploration Factor during Index Build, typically 64–200):** Depth of priority queue search when inserting new vectors. Higher values increase index build time but improve graph quality and recall.
-  3. **$efSearch$ (Exploration Factor during Query Time, typically 32–128):** Depth of queue during real-time queries. Controls the runtime tradeoff between search latency and recall accuracy.
+  1. **Parameter $M$ (Max Connections per Node, typically 16 to 64):** Number of bidirectional edges per vector. Higher $M$ improves recall and search speed on high-dimensional vectors, but increases index memory consumption.
+  2. **Parameter $ef_{\text{construction}}$ (Exploration Factor during Index Build, typically 64 to 200):** Depth of priority queue search when inserting new vectors. Higher values increase index build time but improve graph quality and recall.
+  3. **Parameter $ef_{\text{search}}$ (Exploration Factor during Query Time, typically 32 to 128):** Depth of queue during real-time queries. Controls the runtime tradeoff between search latency and recall accuracy.
 * **Follow-up Interview Question:** Why does HNSW require significantly more RAM than an Inverted File Index (IVFFlat)? *(Answer: HNSW stores both raw vectors and billions of bidirectional graph edge pointers in memory).*
 
 ---

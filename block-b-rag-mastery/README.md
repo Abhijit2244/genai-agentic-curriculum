@@ -134,7 +134,7 @@ $$\text{MMR} = \arg\max_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}(
 - **Dense Vectors (Embeddings)**: High semantic recall (`"worker leaves"` $\to$ `"separated employee"`).
 - **Sparse Vectors (BM25 / Keyword)**: High lexical precision for exact acronyms, error codes, SKUs, and standard numbers (`"AUD-STD-2026-V4"`).
 - **Reciprocal Rank Fusion (RRF)**: Combines rankings without needing normalized score calibration:
-  $$\text{RRF\_Score}(d) = \sum_{m \in M} \frac{1}{60 + r_m(d)}$$
+  $$\mathrm{RRF}(d) = \sum_{m \in M} \frac{1}{60 + r_m(d)}$$
 
 #### 4. Two-Stage Retrieval with Cross-Encoder Re-Ranking
 - **Stage 1 (Bi-Encoder Retriever)**: Quickly scans 100,000 chunks via dot products to retrieve candidate top-50.
@@ -189,7 +189,7 @@ Evaluating RAG systems requires testing three independent dimensions:
 | **Primary Purpose** | Inject dynamic factual knowledge & proprietary documents. | Teach style, tone, format, domain jargon, or specialized tasks. | One-off reasoning over massive unified inputs (entire codebases, whole books). |
 | **Knowledge Freshness** | **Real-time (instant update upon indexing)**. | Static (frozen at training time). | Real-time (injected directly in prompt). |
 | **Hallucination Risk** | **Extremely Low** (strictly grounded with citations). | Moderate to High (models can fabricate facts confidently). | Low (grounded in prompt, but subject to "Lost in the Middle"). |
-| **Setup & Maintenance Cost** | Low to Moderate (Vector DB + Embedding API). | High (GPU clusters, dataset curation, compute runs). | High per-inference token cost ($3–$10 per large call). |
+| **Setup & Maintenance Cost** | Low to Moderate (Vector DB + Embedding API). | High (GPU clusters, dataset curation, compute runs). | High per-inference token cost (`$3`–`$10` per large call). |
 | **Auditability & Citations** | **Yes (exact file, page, and chunk provenance)**. | No (weights are a black box; no citations). | Partial (citations possible, but noisy over 1M tokens). |
 
 ---

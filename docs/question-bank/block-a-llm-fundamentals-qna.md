@@ -382,7 +382,7 @@ final_response = client.chat.completions.create(model="gpt-4o", messages=message
   $$\text{Attention}(Q, K, V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
   When generating token $t$, the query $Q_t$ only needs to attend to past keys $K_{1 \dots t-1}$ and values $V_{1 \dots t-1}$. Without a cache, calculating token $t$ would require recomputing $K$ and $V$ for all preceding $t-1$ tokens at every single step ($\mathcal{O}(N^2)$ compute).
 * **VRAM Sizing Formula:**
-  $$\text{VRAM}_{\text{KVCache}} = 2 \times (\text{layers}) \times (\text{heads}) \times (\text{head\_dim}) \times (\text{context\_length}) \times (\text{bytes\_per\_param}) \times (\text{batch\_size})$$
+  $$\text{VRAM}_{\text{KVCache}} = 2 \times (\text{layers}) \times (\text{heads}) \times (d_{\text{head}}) \times (L_{\text{context}}) \times (\text{bytes per param}) \times (B_{\text{batch}})$$
   For a 70B model running 8k context at FP16: $\approx 1.2\text{ GB}$ of VRAM per concurrent request!
 * **Real-World Application:** Serving LLMs at scale; systems like **vLLM** use **PagedAttention** to allocate non-contiguous VRAM pages for the KV cache to eliminate memory fragmentation.
 * **Follow-up Interview Question:** What is the difference between Multi-Head Attention (MHA), Multi-Query Attention (MQA), and Grouped-Query Attention (GQA) in relation to KV cache size?

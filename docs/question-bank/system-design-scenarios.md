@@ -25,7 +25,7 @@ An international financial institution processes **1,000,000 vendor invoices and
 - **Throughput**: 1,000,000 invoices/day (~12 invoices/second steady state, peak 60 invoices/second).
 - **End-to-End Latency**: Batch processing `< 15 minutes` per batch; on-demand urgent audit `< 10 seconds`.
 - **Accuracy Target**: `> 99.5%` invoice data extraction accuracy; `< 2%` false positive rate on fraud flags.
-- **Cost Target**: `< \$0.03` average inference and compute cost per processed invoice.
+- **Cost Target**: `< `$0.03`` average inference and compute cost per processed invoice.
 - **Auditability**: 100% deterministic decision lineage; WORM (Write Once, Read Many) storage for 7-year statutory retention.
 
 ---
@@ -69,8 +69,8 @@ flowchart TD
 ### 3. Component Deep Dive & Technical Decisions
 
 #### A. Ingestion & Preprocessing Tier
-- **Why Local OCR before LLM?** Feeding 1,000,000 raw invoice images directly to multimodal frontier models (e.g., GPT-4o or Claude 3.5 Sonnet) at \$0.02 per image would cost **\$20,000/day (\$600,000/month)**.
-- **Cost-Optimized Strategy**: Deploy an on-premise/GPU cluster running `PaddleOCR` or `LayoutLMv3` to extract structured text, key-value pairs, and table coordinates. Local compute cost: **\$0.0015 per invoice**. Only ambiguous or handwritten segments are routed to multimodal LLMs.
+- **Why Local OCR before LLM?** Feeding 1,000,000 raw invoice images directly to multimodal frontier models (e.g., GPT-4o or Claude 3.5 Sonnet) at `$0.02` per image would cost **`$20,000`/day (`$600,000`/month)**.
+- **Cost-Optimized Strategy**: Deploy an on-premise/GPU cluster running `PaddleOCR` or `LayoutLMv3` to extract structured text, key-value pairs, and table coordinates. Local compute cost: **`$0.0015` per invoice**. Only ambiguous or handwritten segments are routed to multimodal LLMs.
 
 #### B. Memory & State Persistence
 - **LangGraph with PostgreSQL Checkpointer**: Invoices undergoing audit move through multiple steps (`ingested`, `ocr_extracted`, `ledger_reconciled`, `policy_checked`, `anomaly_flagged`, `awaiting_human_approval`, `approved`).
@@ -180,7 +180,7 @@ flowchart TD
 #### B. Hybrid Search with Reciprocal Rank Fusion (RRF)
 Legal queries feature exact case codes (`"Sec. 12.3(a) Indemnification"`) where dense semantic embeddings fail, as well as abstract concepts (`"force majeure pandemic clauses"`) where lexical BM25 fails.
 - **RRF Formula**:
-  $$RRF\_Score(d) = \sum_{m \in \{dense, sparse\}} \frac{1}{60 + Rank_m(d)}$$
+  $$\mathrm{RRF}(d) = \sum_{m \in \{dense, sparse\}} \frac{1}{60 + Rank_m(d)}$$
 - Combining dense retrieval with lexical retrieval ensures both keyword precision and conceptual recall.
 
 #### C. Cross-Encoder Re-Ranking
@@ -268,7 +268,7 @@ flowchart TD
 - **Defenses**:
   1. **Strict Capability Scoping**: Agents operate with scoped session tokens. An agent working on customer support has zero OPA permissions for financial tables.
   2. **Egress Quarantine**: Tool execution containers (gVisor/Firecracker) have egress network traffic blocked except to strictly whitelisted internal IP ranges.
-  3. **Human Confirmation Signals**: High-risk tool calls (destructive writes, queries over \$100k, external emails) trigger the MCP Gateway to return an interactive confirmation payload before executing.
+  3. **Human Confirmation Signals**: High-risk tool calls (destructive writes, queries over `$100k`, external emails) trigger the MCP Gateway to return an interactive confirmation payload before executing.
 
 ---
 

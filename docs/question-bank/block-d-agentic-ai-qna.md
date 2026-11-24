@@ -39,7 +39,7 @@
 
 ### Q1.2: What is the 5-step Agentic Perception-Action Loop?
 * **Direct Answer:** The universal operating cycle of an autonomous agent:
-  $$\text{1. Perceive} \longrightarrow \text{2. Reason / Plan} \longrightarrow \text{3. Act (Tool Call)} \longrightarrow \text{4. Observe (Inspect Result)} \longrightarrow \text{5. Reflect & Repeat}$$
+  $$\text{1. Perceive} \longrightarrow \text{2. Reason / Plan} \longrightarrow \text{3. Act (Tool Call)} \longrightarrow \text{4. Observe (Inspect Result)} \longrightarrow \text{5. Reflect and Repeat}$$
 * **Underlying Concept:**
   1. **Perceive:** Ingests user input, system instructions, and environment state.
   2. **Reason / Plan:** Analyzes what is missing to solve the goal; decides which specific tool and parameters to use.
@@ -412,7 +412,7 @@ def process_customer_ticket(ticket_body: str):
 * **Permanent Remediation Protocols:**
   1. **Computer Vision Font-Color Contrast Pruning:** OpenCV preprocessing binarizes using Otsu thresholding; text pixels whose raw luminance matches local background luminance within $5\%$ are stripped as adversarial artifacts.
   2. **Deterministic Tool Authorization Engine:** The financial disbursement tool is decoupled from the LLM prompt. The disbursement engine queries the general ledger:
-     $$\text{Cumulative Vendor Spend in 30 Days} = \$49,950 + \$49,950 = \$99,900 > \$50,000$$
+     $$\text{Cumulative Vendor Spend in 30 Days} = 49,950 + 49,950 = 99,900 > 50,000 \quad (\text{USD})$$
      The deterministic rule triggers mandatory CFO sign-off regardless of any waiver text extracted from the document.
   3. **Revocation of Unattended Wire Tools:** Agents are permanently stripped of direct wire transfer authority; they can only generate pending disbursement vouchers awaiting human approval.
 * **Follow-up Interview Question:** What other steganographic techniques do adversarial actors use to hide prompt injections in document images?

@@ -57,7 +57,7 @@ The **Context Window** is the maximum sequence length $N$ (prompt tokens + compl
 
 ### 3.2 The KV Cache (Key-Value Cache)
 During generation, calculating keys ($K$) and values ($V$) for already-generated tokens is redundant. The **KV Cache** stores these vectors in GPU VRAM across decoding steps:
-$$\text{Memory}_{KVCache} = 2 \times 2 \times n_{\text{layers}} \times n_{\text{heads}} \times d_{\text{head}} \times N_{\text{tokens}} \times \text{bytes\_per\_param}$$
+$$\text{Memory}_{KVCache} = 2 \times 2 \times n_{\text{layers}} \times n_{\text{heads}} \times d_{\text{head}} \times N_{\text{tokens}} \times \text{bytes per param}$$
 - **TTFT (Time to First Token)**: Computes all $Q, K, V$ for the prompt in parallel.
 - **ITL (Inter-Token Latency)**: Generates one token at a time sequentially using the KV Cache. Memory-bandwidth bound.
 
@@ -491,7 +491,7 @@ $$P(w_i) = \frac{\exp(z_i / T)}{\sum_{j \in V} \exp(z_j / T)}$$
 In standard autoregressive Transformers, generating token $t+1$ requires attention over tokens $1 \dots t$. Without a cache, generating each new token would require recomputing Key ($K$) and Value ($V$) projections for all past tokens, resulting in $\mathcal{O}(N^3)$ computational redundancy across generation.
 
 The **KV Cache** preserves the $K$ and $V$ tensors of all previous tokens in GPU VRAM across generation steps:
-$$\text{Memory}_{\text{KVCache}} = 2 \times (\text{layers}) \times (\text{heads}) \times (d_{\text{head}}) \times (\text{sequence\_length}) \times (\text{bytes\_per\_precision})$$
+$$\text{Memory}_{\text{KVCache}} = 2 \times (\text{layers}) \times (\text{heads}) \times (d_{\text{head}}) \times (\text{sequence length}) \times (\text{bytes per precision})$$
 For example, for a 70B parameter model with 80 layers, 64 heads, dimension 128 in FP16 (2 bytes), a 4,000 token sequence consumes $\approx 5.24 \text{ GB}$ of VRAM per concurrent request purely for the KV Cache!
 
 **TTFT vs. ITL**:
@@ -856,7 +856,7 @@ $$P(w_i) = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}$$
 #### Model Answer:
 Both penalties modify the raw logits $z_i$ of token $w_i$ before the Softmax function is applied. Let $c_i$ be the count of times token $w_i$ has already appeared in the generated completion.
 
-$$\tilde{z}_i = z_i - (\text{presence\_penalty} \times \mathbb{I}[c_i > 0]) - (\text{frequency\_penalty} \times c_i)$$
+$$\tilde{z}_i = z_i - (\text{presence penalty} \times \mathbb{I}[c_i > 0]) - (\text{frequency penalty} \times c_i)$$
 
 1. **Presence Penalty**:
    - Constant one-time subtraction applied if the token has appeared at least once ($\mathbb{I}[c_i > 0]$).

@@ -139,7 +139,7 @@ Write a function `reciprocal_rank_fusion` that takes:
 - `k`: Smoothing constant (default 60).
 
 The function must compute the RRF score for every unique document:
-$$\text{RRF\_Score}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{k + \text{rank}_m(d)}$$
+$$\mathrm{RRF}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{k + \text{rank}_m(d)}$$
 and return the documents sorted in descending order of their fused score.
 
 ---

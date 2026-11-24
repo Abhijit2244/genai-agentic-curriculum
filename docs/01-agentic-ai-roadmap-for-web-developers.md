@@ -460,7 +460,7 @@ A text embedding transforms unstructured language into a point in high-dimension
 - When vectors are unit-normalized ($\|\vec{q}\| = \|\vec{d}\| = 1$), cosine similarity simplifies to the basic dot product ($\vec{q} \cdot \vec{d}$).
 - **Hybrid Search (BM25 + Dense Vectors with RRF):**
   Pure vector search fails on exact product SKUs, account IDs, or alphanumeric regulatory codes (`AP-DUP-03`). Modern RAG combines BM25 keyword rankings with dense vector rankings using **Reciprocal Rank Fusion (RRF)**:
-  $$\text{RRF\_Score}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{60 + \text{rank}_m(d)}$$
+  $$\mathrm{RRF}(d) = \sum_{m \in \{\text{dense}, \text{sparse}\}} \frac{1}{60 + \text{rank}_m(d)}$$
 
 ---
 

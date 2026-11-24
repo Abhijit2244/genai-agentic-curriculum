@@ -98,7 +98,7 @@ $$\text{MMR} = \arg\max_{d_i \in R \setminus S} \left[ \lambda \cdot \text{Sim}(
 - **Dense Vectors**: Semantic matches (`"worker leaves"` $\to$ `"separated employee"`).
 - **Sparse BM25**: Exact keywords, acronyms, and product IDs (`"AUD-STD-2026-V4"`).
 - **Reciprocal Rank Fusion (RRF)**: Merges ranked lists without needing score calibration:
-  $$\text{RRF\_Score}(d) = \sum_{m \in M} \frac{1}{k + r_m(d)} \quad (k \approx 60)$$
+  $$\mathrm{RRF}(d) = \sum_{m \in M} \frac{1}{k + r_m(d)} \quad (k \approx 60)$$
 
 ### 6.4 Two-Stage Retrieval with Cross-Encoder Re-Ranking
 - **Stage 1 (Bi-Encoder)**: Fast $\mathcal{O}(1)$ approximate retrieval of top-50 candidate chunks.
@@ -507,7 +507,7 @@ In Hybrid Search, BM25 returns unbounded lexical matching scores (e.g., $18.42, 
 
 **Reciprocal Rank Fusion (RRF)** ignores raw score values and operates purely on **ordinal ranks**:
 
-$$\text{RRF\_Score}(d \in D) = \sum_{m \in M} \frac{1}{k + r_m(d)}$$
+$$\mathrm{RRF}(d \in D) = \sum_{m \in M} \frac{1}{k + r_m(d)}$$
 
 - $M$: Set of ranking systems (e.g., BM25 and Vector Search).
 - $r_m(d)$: The ordinal rank of document $d$ in system $m$ ($1, 2, 3, \dots$).
